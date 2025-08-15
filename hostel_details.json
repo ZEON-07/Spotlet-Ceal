@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "hostel_name": "Dhwaraka [ Male ]",
+        "hostel_name": "Home Stay [ Male ]",
         "owner_name": "Shella Mohan",
         "price": "5500",
         "contact_no": "8281603395",
@@ -360,7 +360,7 @@
     },
     {
         "id": 7,
-        "hostel_name": "Dhwaraka [ Females ]",
+        "hostel_name": "Home Stay [ Females ]",
         "owner_name": "Shella Mohan",
         "price": "5500",
         "contact_no": "8281603395",
@@ -439,10 +439,10 @@
         "food": "",
         "deposit": "5000",
         "distance": "2.9km",
-        "gender": "Male / Female",
+        "gender": "Female",
         "seats": {
-            "boys": "5",
-            "girls": "5"
+            "boys": "0",
+            "girls": "10"
         },
         "images": [
             "img_65.jpg",
