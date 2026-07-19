@@ -4,14 +4,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.querySelector(".hamburger-menu");
   const dropdown = document.querySelector(".nav-links");
   const container = document.querySelector(".container");
-  const text = baffle(".name");
-  text.set({
-    characters: "░▒░ ░██░> ████▓ >█> ░/█>█ ██░░ █<▒ ▓██░ ░/░▒",
-    speed: 180,
-  });
+  const names = document.querySelectorAll(".name");
+  names.forEach((nameEl) => {
+    const b = baffle(nameEl).set({
+      characters: "░▒░ ░██░> ████▓ >█> ░/█>█ ██░░ █<▒ ▓██░ ░/░▒",
+      speed: 180,
+    });
+    
+    // Initial scramble on load
+    b.start();
+    b.reveal(3000); // Revealed faster so they aren't unreadable for too long
 
-  text.start();
-  text.reveal(8000);
+    // Bring the effect back when hovering over the card
+    const card = nameEl.closest('.card');
+    if (card) {
+      card.addEventListener('mouseenter', () => {
+        b.start();
+      });
+      card.addEventListener('mouseleave', () => {
+        b.reveal(500);
+      });
+    }
+  });
 
   function applyTheme(theme) {
     if (theme === "light") {

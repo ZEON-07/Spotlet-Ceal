@@ -273,6 +273,13 @@ document.addEventListener("DOMContentLoaded", function () {
           dot.className = `dot`;
           img.src = `../Images/` + imageSrc;
           img.alt = `placeholder.png`;
+          img.style.cursor = "pointer";
+          img.addEventListener("click", function () {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = this.src;
+          });
           imageGallery.appendChild(img);
           dotGallery.appendChild(dot);
         } else {
@@ -297,6 +304,29 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".brand").addEventListener("click", function () {
         window.location.href = `../Home/home.html`;
       });
+
+      // Modal close logic
+      const modal = document.getElementById("imageModal");
+      const span = document.querySelector(".close");
+      const modalImg = document.getElementById("modalImage");
+      
+      if (modal && span && modalImg) {
+        span.onclick = function () {
+          modal.style.display = "none";
+          modalImg.classList.remove("zoomed");
+        };
+        modal.onclick = function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            modalImg.classList.remove("zoomed");
+          }
+        };
+        
+        // Toggle zoom on image click
+        modalImg.onclick = function () {
+          this.classList.toggle("zoomed");
+        };
+      }
     })
     .catch((error) => console.error("Error fetching hostel details:", error));
 });
