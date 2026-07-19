@@ -340,7 +340,12 @@
     "seats": {
       "girls": ""
     },
-    "images": [],
+    "images": [
+      "moonumukku (1).jpg",
+      "moonumukku (2).jpg",
+      "moonumukku (3).jpg",
+      "moonumukku (4).jpg"
+    ],
     "links": [],
     "common_details": {
       "wifi": "Yes",

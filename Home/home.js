@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const darkModeToggle = document.querySelector(".dark-mode-toggle");
   const body = document.body;
   const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const dropdown = document.querySelector(".dropdown");
+  const dropdown = document.querySelector(".nav-links");
   const container = document.querySelector(".container");
 
   function applyTheme(theme) {
