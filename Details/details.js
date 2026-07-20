@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.querySelector("#hostelName").textContent = hostel.hostel_name;
       document.querySelector("#hostelPrice").textContent = `₹${hostel.price}`;
+      document.querySelector("#priceSuffix").textContent = hostel.id == 9 ? " / month / person" : " / month";
 
       feeAdminDeposit = document.querySelector("#hostelDeposit");
       textFeeExtra = document.querySelector("#feeExtraText");
@@ -112,14 +113,24 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "cctv", checkId: "cctvCheck" },
         { id: "iron_box", checkId: "ironBoxCheck" },
         { id: "common_bathroom", checkId: "commonBathroomCheck" },
+        { id: "common_kitchen", checkId: "kitchenCheck" },
+        { id: "common_balcony", checkId: "balconyCheck" },
+        { id: "newly_renovated", checkId: "renovatedCheck" },
       ];
 
+      const restrictedAmenities = ["common_kitchen", "common_balcony", "newly_renovated"];
+      
       const shouldStop = amenities.some((amenity) => {
         if (hostel.common_details["NOTA"] === "Yes") {
           return true;
         } else {
-          const isAvailable = hostel.common_details[amenity.id] === "Yes";
           const checkElement = document.getElementById(amenity.checkId);
+          if (restrictedAmenities.includes(amenity.id) && hostel.id != 9) {
+            checkElement.parentElement.style.display = "none";
+            return false;
+          }
+          
+          const isAvailable = hostel.common_details[amenity.id] === "Yes";
           checkElement.classList.add(
             isAvailable ? "success-checkmark" : "crosssign"
           );
@@ -172,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           document.querySelector(
             "#singleRoomPrice"
-          ).textContent = `₹${hostel.single_room["price"]} / month`;
+          ).textContent = `₹${hostel.single_room["price"]} ${hostel.id == 9 ? "/ month / person" : "/ month"}`;
           const checkElement = document.getElementById(amenity.checkId);
           const isAvailable = amenity.value === "Yes";
           checkElement.classList.add(
@@ -230,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           document.querySelector(
             "#sharedRoomPrice"
-          ).textContent = `₹${hostel.shared_room["price"]} / month`;
+          ).textContent = `₹${hostel.shared_room["price"]} ${hostel.id == 9 ? "/ month / person" : "/ month"}`;
           const checkElement = document.getElementById(amenity.checkId);
           const isAvailable = amenity.value === "Yes";
           checkElement.classList.add(
@@ -258,11 +269,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const rightBtn = document.querySelector(".scroll-btn.right");
 
       leftBtn.addEventListener("click", () => {
-        imageGallery.scrollBy({ left: -300, behavior: "smooth" });
+        const firstMedia = imageGallery.querySelector('img, video');
+        const scrollAmount = firstMedia ? firstMedia.clientWidth + 10 : 300;
+        imageGallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       });
 
       rightBtn.addEventListener("click", () => {
-        imageGallery.scrollBy({ left: 300, behavior: "smooth" });
+        const firstMedia = imageGallery.querySelector('img, video');
+        const scrollAmount = firstMedia ? firstMedia.clientWidth + 10 : 300;
+        imageGallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
       });
 
       imageGallery.textContent = "";

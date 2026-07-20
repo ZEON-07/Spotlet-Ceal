@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const hostelCard = `
             <div class="hostel_card" data-id="${hostel.id}">
               <div class="top" style="background-image: url('../Images/${hostel["images"][0]}');">
-                <div class="prize">₹${hostel.price} <span class="sub">/ month</span></div>
+                <div class="prize">₹${hostel.price} <span class="sub">${hostel.id == 9 ? "/ month / person" : "/ month"}</span></div>
               </div>
               <div class="bottom">
                 <div class="info">

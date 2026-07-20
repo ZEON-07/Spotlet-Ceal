@@ -26,7 +26,10 @@
       "cctv": "Yes",
       "iron_box": "Yes",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "No",
+      "common_balcony": "No",
+      "newly_renovated": "No"
     },
     "single_room": {
       "available": "No",
@@ -90,7 +93,10 @@
       "cctv": "Yes",
       "iron_box": "Yes",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "No",
+      "common_balcony": "No",
+      "newly_renovated": "No"
     },
     "single_room": {
       "available": "No",
@@ -157,7 +163,9 @@
       "cctv": "No",
       "iron_box": "No",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "No",
+      "common_balcony": "No"
     },
     "single_room": {
       "available": "Yes",
@@ -222,7 +230,9 @@
       "cctv": "Yes",
       "iron_box": "No",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "No",
+      "common_balcony": "No"
     },
     "single_room": {
       "available": "Yes",
@@ -289,7 +299,9 @@
       "cctv": "Yes",
       "iron_box": "Yes",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "No",
+      "common_balcony": "No"
     },
     "single_room": {
       "available": "Yes",
@@ -330,7 +342,7 @@
     "id": 9,
     "hostel_name": "Shared Home For Girls - Moonumukku",
     "owner_name": "",
-    "price": "",
+    "price": "4000",
     "contact_no": "7356455367",
     "whatsapp_no": "7356455367",
     "food": "",
@@ -338,13 +350,16 @@
     "distance": "1.5 kms",
     "gender": "Female",
     "seats": {
-      "girls": ""
+      "girls": "6"
     },
     "images": [
-      "moonumukku (1).jpg",
-      "moonumukku (2).jpg",
-      "moonumukku (3).jpg",
-      "moonumukku (4).jpg"
+      "img_68.jpg",
+      "img_69.jpg",
+      "img_70.jpg",
+      "img_71.jpg",
+      "img_72.jpg",
+      "img_73.jpg",
+      "img_74.jpg"
     ],
     "links": [],
     "common_details": {
@@ -357,7 +372,10 @@
       "cctv": "Yes",
       "iron_box": "No",
       "common_bathroom": "Yes",
-      "NOTA": "No"
+      "NOTA": "No",
+      "common_kitchen": "Yes",
+      "common_balcony": "Yes",
+      "newly_renovated": "Yes"
     },
     "single_room": {
       "available": "No",
@@ -378,7 +396,7 @@
     },
     "shared_room": {
       "available": "Yes",
-      "price": "",
+      "price": "4500",
       "bed_type": {
         "single": {
           "available": "Yes"
